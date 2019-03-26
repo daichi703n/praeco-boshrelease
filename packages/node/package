@@ -1,0 +1,12 @@
+set -e
+
+NODE_VERSION=10.15.3
+
+tar xzf node/node-v${NODE_VERSION}.tar.gz
+
+pushd node-v${NODE_VERSION}
+  ./configure
+  make
+  make install
+  set -e
+popd
