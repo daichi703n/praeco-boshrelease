@@ -1,0 +1,5 @@
+check process elastalert-server
+  with pidfile /var/vcap/sys/run/elastalert-server/elastalert-server.pid
+  start program "/var/vcap/jobs/elastalert-server/bin/ctl start"
+  stop program "/var/vcap/jobs/elastalert-server/bin/ctl stop"
+  group vcap

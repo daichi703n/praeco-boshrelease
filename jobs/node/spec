@@ -1,0 +1,9 @@
+---
+name: node
+
+templates: {}
+
+packages:
+- node
+
+properties: {}

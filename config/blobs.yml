@@ -1,3 +1,6 @@
-node/node-v10.15.3.tar.gz:
-  size: 36370204
-  sha: b64774eea1a877829d6882b92dd86af8d3459498
+elastalert-server/elastalert-server-1.0.0.tar.gz:
+  size: 11208053
+  sha: 27080b80ea68771b908156baecd623d7847296a6
+node/node-v10.15.3.tar.xz:
+  size: 12309200
+  sha: ea6b3b748f78e99b8d0ee35bc063c200e06b57f9

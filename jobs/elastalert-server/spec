@@ -1,0 +1,10 @@
+---
+name: elastalert-server
+
+templates:
+  bin/ctl: bin/ctl
+
+packages:
+- elastalert-server
+
+properties: {}

@@ -1,7 +1,7 @@
 ---
-name: ruby
+name: node
 
 dependencies: []
 
 files:
-- node/node-v10.15.3.tar.gz
+- node/node-v10.15.3.tar.xz

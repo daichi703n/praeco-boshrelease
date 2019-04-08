@@ -12,5 +12,5 @@ releases/**/*.tgz
 *~
 *#
 #*
-.download
+.downloads
 credentials.yml

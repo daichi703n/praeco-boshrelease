@@ -1,0 +1,36 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/elastalert-server
+LOG_DIR=/var/vcap/sys/log/elastalert-server
+STORE_DIR=/var/vcap/store/elastalert-server
+JOB_DIR=/var/vcap/jobs/elastalert-server
+TMP_DIR=/var/vcap/sys/tmp/elastalert-server
+
+PIDFILE=$RUN_DIR/elastalert-server.pid
+RUNAS=vcap
+
+export NODE_PATH=/var/vcap/packages/node
+export PATH=$PATH:$NODE_PATH/bin
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR $STORE_DIR $TMP_DIR
+    #chown -R $RUNAS:$RUNAS $RUN_DIR $LOG_DIR $STORE_DIR $TMP_DIR ${JOB_DIR}/config
+
+    pid_guard $PIDFILE elastalert-server
+
+    cd /var/vcap/packages/elastalert-server/ \
+
+    #exec chpst -u $RUNAS:$RUNAS \
+      npm run start
+    ;;
+
+  stop)
+    kill_and_wait $PIDFILE
+    ;;
+
+  *)
+  echo "Usage: ctl {start|stop}" ;;
+esac
+exit 0

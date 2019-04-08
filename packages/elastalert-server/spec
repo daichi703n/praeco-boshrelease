@@ -1,6 +1,8 @@
 ---
 name: elastalert-server
 
-dependencies: []
+dependencies:
+- node
 
-files: []
+files:
+- elastalert-server/**/*
