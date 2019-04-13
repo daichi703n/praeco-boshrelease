@@ -1,0 +1,7 @@
+---
+name: elastalert
+
+dependencies: []
+
+files:
+- elastalert/elastalert-v0.1.39.tar.gz

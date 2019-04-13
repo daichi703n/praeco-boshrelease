@@ -1,9 +1,9 @@
 ---
-name: node
+name: elastalert
 
 templates: {}
 
 packages:
-- node
+- elastalert
 
 properties: {}

@@ -5,6 +5,10 @@ releases:
   version: latest
   #url: https://github.com/making/openjdk-boshrelease/releases/download/8.0.2/openjdk-boshrelease-8.0.2.tgz
   #sha1: e76b73d2560d143b155e958aa06a2e266e261464
+- name: elastalert
+  version: 0.2.2
+  url: https://github.com/bosh-elastic-stack/elastalert-boshrelease/releases/download/0.2.2/elastalert-boshrelease-0.2.2.tgz
+  sha1: f1c37995664c2311dc21cd78e21bd2c13f9fe3e6
 
 stemcells:
 - os: ubuntu-xenial
@@ -14,13 +18,30 @@ stemcells:
 instance_groups:
 - name: praeco
   jobs:
-  - name: node
-    release: praeco
+  # - name: python2.7
+  #   release: praeco
+  - name: elastalert
+    release: elastalert
+    # release: praeco
+    #---test sittings from here---#
+    properties:
+      elastalert:
+        es_host: h-cent-doc01.designet.local
+        es_port: 9200
+        rules: []
+    #---test sittings to here---#
+  #- name: node
+  #  release: praeco
   - name: elastalert-server
     release: praeco
     properties:
-      foo:
-        bar: baz
+    #---test sittings from here---#
+    properties:
+      elastalert:
+        es_host: h-cent-doc01.designet.local
+        es_port: 9200
+        writeback_index: praeco_elastalert_status
+    #---test sittings to here---#
   instances: 1
   stemcell: xenial
   update:
@@ -38,5 +59,5 @@ instance_groups:
 update:
   canaries: 1
   max_in_flight: 3
-  canary_watch_time: 30000-600000
-  update_watch_time: 5000-600000
+  canary_watch_time: 30000-100000
+  update_watch_time: 5000-100000

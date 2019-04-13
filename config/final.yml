@@ -1,1 +1,6 @@
 name: praeco-boshrelease
+blobstore:
+  provider: local
+  options:
+    blobstore_path: /tmp/praeco
+final_name: praeco
