@@ -26,19 +26,20 @@ case $1 in
 
     pid_guard $PIDFILE elastalert-server
 
-    cd /var/vcap/packages/elastalert-server/ \
+    cd /var/vcap/packages/elastalert-server/
 
     echo "Starting elastalert-server..." >>$LOG_DIR/elastalert-server.stdout.log
     echo $$ > $PIDFILE
 
     # exec chpst -u $RUNAS:$RUNAS \
-    exec npm run start \
+    exec npm start \
         >>$LOG_DIR/elastalert-server.stdout.log \
         2>>$LOG_DIR/elastalert-server.stderr.log
     ;;
 
   stop)
-    kill_and_wait $PIDFILE
+    PID=`lsof -i:3030 | grep 3030 | awk -F' ' '{print$2}'`
+    kill_and_wait_pid $PIDFILE $PID
     ;;
 
   *)
