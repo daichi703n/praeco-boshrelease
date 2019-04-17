@@ -1,0 +1,5 @@
+set -e
+
+PRAECO_VERSION=0.3.4
+
+tar xzf praeco/praeco-${PRAECO_VERSION}.tar.gz  -C $BOSH_INSTALL_TARGET --strip-components 1

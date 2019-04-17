@@ -1,0 +1,8 @@
+---
+name: praeco
+
+dependencies:
+- node
+
+files:
+- praeco/**/*

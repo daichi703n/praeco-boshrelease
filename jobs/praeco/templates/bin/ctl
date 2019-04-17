@@ -1,0 +1,54 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/praeco
+LOG_DIR=/var/vcap/sys/log/praeco
+STORE_DIR=/var/vcap/store/praeco
+JOB_DIR=/var/vcap/jobs/praeco
+TMP_DIR=/var/vcap/sys/tmp/praeco
+
+PIDFILE=$RUN_DIR/praeco.pid
+RUNAS=vcap
+
+export NODE_PATH=/var/vcap/packages/node
+export PYTHONPATH=/var/vcap/packages/elastalert/lib/python2.7/site-packages/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/vcap/packages/python2.7/lib
+# export PATH=$PATH:$NODE_PATH/bin:$PYTHONPATH/bin
+export PATH=$PATH:$NODE_PATH/bin:/var/vcap/packages/python2.7/bin
+
+source $JOB_DIR/bin/ctl_utils.sh
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR $STORE_DIR $TMP_DIR
+    #chown -R $RUNAS:$RUNAS $RUN_DIR $LOG_DIR $STORE_DIR $TMP_DIR ${JOB_DIR}/config
+
+    pid_guard $PIDFILE praeco
+
+    cd /var/vcap/packages/praeco/
+
+    echo "Starting praeco..." >>$LOG_DIR/praeco.stdout.log
+    echo $$ > $PIDFILE
+
+    # exec chpst -u $RUNAS:$RUNAS \
+    ###MOVE TO pre-start###
+    npm rebuild node-sass \
+        >>$LOG_DIR/praeco.stdout.log \
+        2>>$LOG_DIR/praeco.stderr.log
+    npm run build \
+        >>$LOG_DIR/praeco.stdout.log \
+        2>>$LOG_DIR/praeco.stderr.log
+    #exec npm run serve \ #PID issue
+    exec npx vue-cli-service serve \
+        >>$LOG_DIR/praeco.stdout.log \
+        2>>$LOG_DIR/praeco.stderr.log
+    ;;
+
+  stop)
+    kill_and_wait $PIDFILE
+    ;;
+
+  *)
+  echo "Usage: ctl {start|stop}" ;;
+esac
+exit 0

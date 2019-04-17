@@ -1,0 +1,5 @@
+check process praeco
+  with pidfile /var/vcap/sys/run/praeco/praeco.pid
+  start program "/var/vcap/jobs/praeco/bin/ctl start"
+  stop program "/var/vcap/jobs/praeco/bin/ctl stop"
+  group vcap

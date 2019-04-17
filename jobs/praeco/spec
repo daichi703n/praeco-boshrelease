@@ -1,0 +1,15 @@
+---
+name: praeco
+
+templates:
+  bin/ctl: bin/ctl
+  bin/ctl_utils.sh: bin/ctl_utils.sh
+  bin/pre-start.sh: bin/pre-start
+  config/config.json.erb: config/config.json
+  config/praeco.yaml: config/praeco.yaml
+
+packages:
+- node
+- praeco
+
+properties: {}
