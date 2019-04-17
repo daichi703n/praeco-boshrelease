@@ -32,14 +32,15 @@ case $1 in
     echo $$ > $PIDFILE
 
     # exec chpst -u $RUNAS:$RUNAS \
-    exec npm start \
+    NODE_PATH=.
+    BABEL_DISABLE_CACHE=1
+    exec node index.js \
         >>$LOG_DIR/elastalert-server.stdout.log \
         2>>$LOG_DIR/elastalert-server.stderr.log
     ;;
 
   stop)
-    PID=`lsof -i:3030 | grep 3030 | awk -F' ' '{print$2}'`
-    kill_and_wait_pid $PIDFILE $PID
+    kill_and_wait $PIDFILE
     ;;
 
   *)
