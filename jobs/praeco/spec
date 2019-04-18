@@ -5,11 +5,52 @@ templates:
   bin/ctl: bin/ctl
   bin/ctl_utils.sh: bin/ctl_utils.sh
   bin/pre-start.sh: bin/pre-start
-  config/config.json.erb: config/config.json
-  config/praeco.yaml: config/praeco.yaml
+  config/api.config.json.erb: config/api.config.json
+  config/praeco.config.json.erb: config/praeco.config.json
 
 packages:
 - node
 - praeco
 
-properties: {}
+properties:
+  #---Copy from ElastAlert BOSH Release---#
+  elastalert.rules_folder:
+    description: "The name of the folder which contains rule configuration files."
+    default: "/var/vcap/jobs/elastalert/rules"
+  elastalert.run_every:
+    description: "how often ElastAlert will query Elasticsearch."
+    default: 
+      minutes: 1
+  elastalert.buffer_time:
+    description: "the size of the query window, stretching backwards from the time each query is run."
+    default: 
+      minutes: 15
+  elastalert.es_host:
+    description: "the address of an Elasticsearch cluster where ElastAlert will store data about its state, queries run, alerts, and errors."
+    default: "localhost"
+  elastalert.es_port:
+    description: " the port corresponding to es_host."
+    default: "9200"
+  elastalert.writeback_index:
+    description: "the name of the index in which ElastAlert will store data."
+    default: "elastalert_status"
+  elastalert.alert_time_limit:
+    description: "the retry window for failed alerts."
+    default:
+      days: 2
+  elastalert.rules:
+    description: "List of ElastAlert rules"
+    example: |
+      - name: Example rule
+        type: frequency
+        index: logstash-*
+        num_events: 50
+        timeframe:
+            hours: 4
+        filter:
+        - term:
+            some_field: "some_value"
+        alert:
+        - "email"
+        email:
+        - "elastalert@example.com"

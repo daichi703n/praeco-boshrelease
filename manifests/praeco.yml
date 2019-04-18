@@ -36,6 +36,14 @@ instance_groups:
     release: praeco
     properties:
     #---test sittings from here---#
+      elastalert:
+        es_host: h-cent-doc01.designet.local
+        es_port: 9200
+        writeback_index: praeco_elastalert_status
+    #---test sittings to here---#
+  - name: praeco
+    release: praeco
+    #---test sittings from here---#
     properties:
       elastalert:
         es_host: h-cent-doc01.designet.local
