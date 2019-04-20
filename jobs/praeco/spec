@@ -7,12 +7,15 @@ templates:
   bin/pre-start.sh: bin/pre-start
   config/api.config.json.erb: config/api.config.json
   config/praeco.config.json.erb: config/praeco.config.json
+  config/BaseRule.config: config/BaseRule.config
 
 packages:
 - node
 - praeco
 
 properties:
+  praeco.slack_webhook_url:
+    description: Slack URL for `rules/BaseRule.config`
   #---Copy from ElastAlert BOSH Release---#
   elastalert.rules_folder:
     description: "The name of the folder which contains rule configuration files."
