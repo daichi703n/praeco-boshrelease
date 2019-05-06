@@ -16,6 +16,14 @@ packages:
 properties:
   praeco.slack_webhook_url:
     description: Slack URL for `rules/BaseRule.config`
+  praeco.external_url:
+    description: xxx
+  praeco.smtp_host:
+    description: xxx
+    default: example.com
+  praeco.smtp_port:
+    description: xxx
+    default: 25
   #---Copy from ElastAlert BOSH Release---#
   elastalert.rules_folder:
     description: "The name of the folder which contains rule configuration files."
