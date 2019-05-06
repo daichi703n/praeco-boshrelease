@@ -5,7 +5,7 @@ templates:
   bin/ctl: bin/ctl
   bin/ctl_utils.sh: bin/ctl_utils.sh
   bin/pre-start.sh: bin/pre-start
-  config/api.config.json.erb: config/api.config.json
+  #config/api.config.json.erb: config/api.config.json
   config/praeco.config.json.erb: config/praeco.config.json
   config/BaseRule.config: config/BaseRule.config
 

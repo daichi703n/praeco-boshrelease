@@ -6,9 +6,14 @@ releases:
   #url: https://github.com/making/openjdk-boshrelease/releases/download/8.0.2/openjdk-boshrelease-8.0.2.tgz
   #sha1: e76b73d2560d143b155e958aa06a2e266e261464
 - name: elastalert
-  version: 0.2.2
-  url: https://github.com/bosh-elastic-stack/elastalert-boshrelease/releases/download/0.2.2/elastalert-boshrelease-0.2.2.tgz
-  sha1: f1c37995664c2311dc21cd78e21bd2c13f9fe3e6
+  version: latest
+  # version: 0.2.2
+  # url: https://github.com/bosh-elastic-stack/elastalert-boshrelease/releases/download/0.2.2/elastalert-boshrelease-0.2.2.tgz
+  # sha1: f1c37995664c2311dc21cd78e21bd2c13f9fe3e6
+# - name: nginx
+#   version: 1.13.12
+#   url: https://bosh.io/d/github.com/cloudfoundry-community/nginx-release?v=1.13.12
+#   sha1: "bf156c545c45ed4e57563274f91dbd433000d776"
 
 stemcells:
 - os: ubuntu-xenial

@@ -16,12 +16,12 @@ end
   "es_debug": false,
   "debug": false,
   "rulesPath": {
-    "relative": true,
-    "path": "/rules"
+    "relative": false,
+    "path": "/var/vcap/store/elastalert-server/rules"
   },
   "templatesPath": {
-    "relative": true,
-    "path": "/rule_templates"
+    "relative": false,
+    "path": "/var/vcap/store/elastalert-server/rule_templates"
   },
   "es_host": "<%= elasticsearch_host %>",
   "es_port": <%= p("elastalert.es_port") %>,
