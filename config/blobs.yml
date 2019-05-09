@@ -10,9 +10,9 @@ libffi/libffi-3.2.1.tgz:
 node/node-v10.15.3.tar.xz:
   size: 12309200
   sha: ea6b3b748f78e99b8d0ee35bc063c200e06b57f9
-praeco/praeco-0.3.4.tar.gz:
-  size: 90730207
-  sha: b9539a9b356003cf74daf31e733e7f48cb0ca716
+praeco/praeco-0.3.5.tar.gz:
+  size: 129781933
+  sha: c648fb1b2ccc56f435204124cf1a0012232118b6
 python2.7/Python-2.7.15.tgz:
   size: 17496336
   sha: c9750707d127d39a6868e1e55f7cd8c7be006b89
