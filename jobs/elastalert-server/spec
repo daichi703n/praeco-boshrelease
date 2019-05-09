@@ -8,6 +8,11 @@ templates:
   config/config.json.erb: config/config.json
   config/elastalert.yaml: config/config.yaml
 
+consumes:
+- name: elasticsearch
+  type: elasticsearch
+  optional: true
+
 packages:
 - elastalert-server
 - node

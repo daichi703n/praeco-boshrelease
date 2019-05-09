@@ -1,6 +1,6 @@
 elastalert-server/elastalert-server-1.0.2.tar.gz:
-  size: 11618466
-  sha: 0d8a3e450c2377087879a2d31fa52653e43f74fe
+  size: 10748189
+  sha: 21b610cf23d41fca40315347c1072bafdef9418a
 elastalert/elastalert-v0.1.39.tar.gz:
   size: 173895
   sha: 1e76429eab1d67562926b1064b2b79ab4e28f004
@@ -11,8 +11,8 @@ node/node-v10.15.3.tar.xz:
   size: 12309200
   sha: ea6b3b748f78e99b8d0ee35bc063c200e06b57f9
 praeco/praeco-0.3.4.tar.gz:
-  size: 74159771
-  sha: 6dfc7b9276bf7c1962cedb4496efb2fa21f6f8bc
+  size: 90730207
+  sha: b9539a9b356003cf74daf31e733e7f48cb0ca716
 python2.7/Python-2.7.15.tgz:
   size: 17496336
   sha: c9750707d127d39a6868e1e55f7cd8c7be006b89

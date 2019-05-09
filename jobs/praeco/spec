@@ -9,6 +9,11 @@ templates:
   config/praeco.config.json.erb: config/praeco.config.json
   config/BaseRule.config: config/BaseRule.config
 
+consumes:
+- name: elasticsearch
+  type: elasticsearch
+  optional: true
+
 packages:
 - node
 - praeco
@@ -16,14 +21,17 @@ packages:
 properties:
   praeco.slack_webhook_url:
     description: Slack URL for `rules/BaseRule.config`
+    default: ""
   praeco.external_url:
     description: xxx
   praeco.smtp_host:
     description: xxx
-    default: example.com
+    default: ""
   praeco.smtp_port:
     description: xxx
-    default: 25
+    default: ""
+  praeco.config_options:
+    description: "Additional options to append to BaseRule.config (YAML format)."
   #---Copy from ElastAlert BOSH Release---#
   elastalert.rules_folder:
     description: "The name of the folder which contains rule configuration files."

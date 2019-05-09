@@ -1,11 +1,11 @@
 <%
-  praeco_host = spec.ip
+  appUrl = "http://"+spec.ip+":8080"
   if_p("praeco.external_url") do |external_url|
-    praeco_host = external_url
+    appUrl = external_url
   end
 -%>
 {
-  "appUrl": "http://<%= praeco_host %>:8080",
+  "appUrl": "<%= appUrl %>",
   "errorLoggerUrl": "",
   "hidePreconfiguredFields": []
 }
