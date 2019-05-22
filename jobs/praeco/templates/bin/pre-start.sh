@@ -14,6 +14,7 @@ mkdir $STORE_DIR
 mkdir $STORE_DIR/rules
 mkdir $STORE_DIR/rule_templates
 ln -fns $CONFIG_DIR/BaseRule.config $STORE_DIR/rules/BaseRule.config
+ln -fns $CONFIG_DIR/BaseRule.config $ELASTALERT_PACKAGE_DIR/rules/BaseRule.config
 # ln -fns $STORE_DIR/rules $ELASTALERT_JOB_DIR/rules/praeco_rules
 # ln -fns $STORE_DIR/rule_templates $ELASTALERT_JOB_DIR/rules/praeco_rule_templates
 
