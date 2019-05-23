@@ -54,7 +54,7 @@ blob_git_npm_download() {
 blob_download node https://nodejs.org/dist/v10.15.3/node-v10.15.3-linux-x64.tar.xz node-v10.15.3.tar.xz
 # blob_npm_download elastalert-server https://github.com/ServerCentral/elastalert-server/archive/1.0.0.tar.gz elastalert-server-1.0.0.tar.gz
 blob_download elastalert https://github.com/Yelp/elastalert/archive/v0.1.39.tar.gz elastalert-v0.1.39.tar.gz
-blob_npm_download praeco https://github.com/ServerCentral/praeco/archive/v0.3.5.tar.gz praeco-0.3.5.tar.gz
+blob_npm_download praeco https://github.com/ServerCentral/praeco/archive/v0.3.7.tar.gz praeco-0.3.7.tar.gz
 
 blob_git_npm_download elastalert-server https://github.com/ServerCentral/elastalert-server elastalert-server-1.0.2.tar.gz
 

@@ -13,6 +13,9 @@ node/node-v10.15.3.tar.xz:
 praeco/praeco-0.3.5.tar.gz:
   size: 129781933
   sha: c648fb1b2ccc56f435204124cf1a0012232118b6
+praeco/praeco-0.3.7.tar.gz:
+  size: 130057375
+  sha: 2e66524e68f7a33bd6fd11b6e805a280e45e3b0b
 python2.7/Python-2.7.15.tgz:
   size: 17496336
   sha: c9750707d127d39a6868e1e55f7cd8c7be006b89
