@@ -1,0 +1,70 @@
+#ops-file for collocate with elastic-stack-bosh-deployment
+#https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment
+
+- type: replace
+  path: /releases/-
+  value:
+    name: praeco
+    version: latest
+
+- type: replace
+  path: /instance_groups/name=praeco?
+  value:
+    name: praeco
+    jobs:
+    - name: elastalert
+      release: elastalert
+      properties:
+        elastalert:
+          writeback_index: elastalert_status
+          smtp_user: ((smtp_user))
+          smtp_password: ((smtp_password))
+          rules:
+          - name: dummy
+            type: frequency
+            index: logstash-*
+            num_events: 3
+            timeframe:
+              minutes: 10
+            filter:
+            - query:
+                query_string:
+                  query: "log:(ERROR)"
+            alert:
+            - slack
+            slack_webhook_url: ((slack_webhook_url))
+    - name: elastalert-server
+      release: praeco
+      properties:
+        elastalert:
+          writeback_index: elastalert_status
+    - name: praeco
+      release: praeco
+      properties:
+        elastalert:
+          writeback_index: elastalert_status
+        praeco:
+          slack_webhook_url: ((slack_webhook_url))
+          external_url: ((praeco_external_url))
+          smtp_host: ((smtp_host))
+          smtp_port: ((smtp_port))
+          config_options:
+            from_addr: ((elastalert_from_addr))
+            smtp_ssl: true
+            #use_ssl: true
+    instances: 1
+    stemcell: xenial
+    update:
+      max_in_flight: 1
+      serial: true
+    azs:
+    - ap-northeast-1a
+    - ap-northeast-1c
+    - ap-northeast-1d
+    vm_type: t2.small
+    vm_extensions:
+    - spot-instance-t2-small
+    - praeco-lb
+    persistent_disk: 1024
+    networks:
+    - name: bosh
