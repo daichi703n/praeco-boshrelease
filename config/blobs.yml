@@ -1,21 +1,28 @@
 elastalert-server/elastalert-server-1.0.2.tar.gz:
   size: 10748189
+  object_id: 807bef9b-cd5b-4bcc-70b8-20c7aa2e49b9
   sha: 21b610cf23d41fca40315347c1072bafdef9418a
 elastalert/elastalert-v0.1.39.tar.gz:
   size: 173895
+  object_id: f5fba242-0a88-43fa-592b-f9820d75fb00
   sha: 1e76429eab1d67562926b1064b2b79ab4e28f004
 libffi/libffi-3.2.1.tgz:
   size: 35189
+  object_id: 3e1dec1d-8fc6-4523-7447-6397793b99f5
   sha: 8ac07f2a5d1f5b4cb78c8d1090d25941f06e5338
 node/node-v10.15.3.tar.xz:
   size: 12309200
+  object_id: 2f11db0a-839d-4162-723d-6403820afabc
   sha: ea6b3b748f78e99b8d0ee35bc063c200e06b57f9
 praeco/praeco-0.3.5.tar.gz:
   size: 129781933
+  object_id: 0ce91c96-66fe-49b2-7aba-831036a16685
   sha: c648fb1b2ccc56f435204124cf1a0012232118b6
 praeco/praeco-0.3.7.tar.gz:
   size: 130057375
+  object_id: bc9ab85f-4098-4c19-5a95-21c0019b5ca9
   sha: 2e66524e68f7a33bd6fd11b6e805a280e45e3b0b
 python2.7/Python-2.7.15.tgz:
   size: 17496336
+  object_id: 0a96a1a1-0ba5-4d78-7d86-b9106e787980
   sha: c9750707d127d39a6868e1e55f7cd8c7be006b89

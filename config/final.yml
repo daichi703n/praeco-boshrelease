@@ -1,6 +1,7 @@
-name: praeco-boshrelease
+name: praeco
 blobstore:
-  provider: local
+  provider: s3
   options:
-    blobstore_path: /tmp/praeco
-final_name: praeco
+    bucket_name: praeco-boshrelease
+    region: ap-northeast-1
+    endpoint: https://s3-ap-northeast-1.amazonaws.com
