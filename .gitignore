@@ -15,3 +15,4 @@ releases/**/*.tgz
 .downloads
 credentials.yml
 manifests/deploy-praeco.sh
+bosh-releases/*
