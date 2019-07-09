@@ -18,22 +18,22 @@ instance_groups:
     release: elastalert
     properties:
       elastalert:
-        es_host: h-cent-doc01.designet.local
-        es_port: 9200
+        es_host: ((es_host))
+        es_port: ((es_port))
         rules: []
   - name: elastalert-server
     release: praeco
     properties:
       elastalert:
-        es_host: h-cent-doc01.designet.local
-        es_port: 9200
+        es_host: ((es_host))
+        es_port: ((es_port))
         writeback_index: praeco_elastalert_status
   - name: praeco
     release: praeco
     properties:
       elastalert:
-        es_host: h-cent-doc01.designet.local
-        es_port: 9200
+        es_host: ((es_host))
+        es_port: ((es_port))
         writeback_index: praeco_elastalert_status
   instances: 1
   stemcell: xenial
