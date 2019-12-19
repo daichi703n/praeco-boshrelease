@@ -1,0 +1,49 @@
+name: praeco
+version: 0.2.0
+commit_hash: 47cc17e
+uncommitted_changes: true
+jobs:
+- name: elastalert
+  version: 33ef95c7781ce3d4cafe5ee6a969d13e21ad4f76
+  fingerprint: 33ef95c7781ce3d4cafe5ee6a969d13e21ad4f76
+  sha1: e17c2ef0eac83f4dda2e2c5b88d8c896473f79ca
+- name: elastalert-server
+  version: 28ba62023ed9559e9122f84dfc335f6aefcb60fa
+  fingerprint: 28ba62023ed9559e9122f84dfc335f6aefcb60fa
+  sha1: 5e720ec6789c79b4b3b626c63cf2976a59d4c75b
+- name: praeco
+  version: 55cdb9e90c5bb9fec46ee1b831c2c4fa3a165547
+  fingerprint: 55cdb9e90c5bb9fec46ee1b831c2c4fa3a165547
+  sha1: 34576f3a7767e30fdac696da663a2f3ce6c0e4fe
+packages:
+- name: elastalert
+  version: 441724e192de1a6fcf80bc9a549d5c3dcb971492
+  fingerprint: 441724e192de1a6fcf80bc9a549d5c3dcb971492
+  sha1: 0f53a453428c606c1a6f6dc0f461388715879d55
+  dependencies: []
+- name: elastalert-server
+  version: db6d7004f42c77429c5126c7127e0f8d667d2664
+  fingerprint: db6d7004f42c77429c5126c7127e0f8d667d2664
+  sha1: 9dfc523f0d18edc13445b5ebc8dbe3084624edc3
+  dependencies:
+  - node
+- name: node
+  version: c6cea303bc2983b8f5d5a203748f3e4df2804a82
+  fingerprint: c6cea303bc2983b8f5d5a203748f3e4df2804a82
+  sha1: 3b7d297f51ac76c6a13db85937cdee53ef76dc7d
+  dependencies: []
+- name: praeco
+  version: 06f9dda26fa45e3f089bf80642577fe92c83475a
+  fingerprint: 06f9dda26fa45e3f089bf80642577fe92c83475a
+  sha1: 4deb419a95b1f7c4efc1eed8651b4b84ddddc350
+  dependencies:
+  - node
+- name: python2.7
+  version: 0bad9f5b2d6dc5da1d07bf1732f7c09a18d22a74
+  fingerprint: 0bad9f5b2d6dc5da1d07bf1732f7c09a18d22a74
+  sha1: a8f2d8b506198e7a20dd32e126d98cc0b3dc470a
+  dependencies: []
+license:
+  version: ca9c6e2c5f3af132f613ca499a126f73f10cbf67
+  fingerprint: ca9c6e2c5f3af132f613ca499a126f73f10cbf67
+  sha1: 33f98a8e12ff72d535aa313d94deab302db0e220

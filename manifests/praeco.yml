@@ -3,7 +3,7 @@ name: praeco
 releases:
 - name: praeco
     version: ((praeco_version))
-    url: https://github.com/daichi703n/praeco-boshrelease/releases/download/((praeco_version))/praeco-boshrelease-0.1.0.tgz
+    url: https://github.com/daichi703n/praeco-boshrelease/releases/download/((praeco_version))/praeco-boshrelease-((praeco_version)).tgz
     sha1: ((praeco_sha1))
 - name: elastalert
   version: latest
