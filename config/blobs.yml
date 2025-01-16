@@ -1,31 +1,12 @@
-elastalert-server/elastalert-server-1.0.2.tar.gz:
-  size: 10748189
-  object_id: 807bef9b-cd5b-4bcc-70b8-20c7aa2e49b9
-  sha: 21b610cf23d41fca40315347c1072bafdef9418a
-elastalert/elastalert-v0.1.39.tar.gz:
-  size: 173895
-  object_id: f5fba242-0a88-43fa-592b-f9820d75fb00
-  sha: 1e76429eab1d67562926b1064b2b79ab4e28f004
-libffi/libffi-3.2.1.tgz:
-  size: 35189
-  object_id: 3e1dec1d-8fc6-4523-7447-6397793b99f5
-  sha: 8ac07f2a5d1f5b4cb78c8d1090d25941f06e5338
-node/node-v10.15.3.tar.xz:
-  size: 12309200
-  object_id: 2f11db0a-839d-4162-723d-6403820afabc
-  sha: ea6b3b748f78e99b8d0ee35bc063c200e06b57f9
-praeco/praeco-0.3.5.tar.gz:
-  size: 129781933
-  object_id: 0ce91c96-66fe-49b2-7aba-831036a16685
-  sha: c648fb1b2ccc56f435204124cf1a0012232118b6
-praeco/praeco-0.3.7.tar.gz:
-  size: 130057375
-  object_id: bc9ab85f-4098-4c19-5a95-21c0019b5ca9
-  sha: 2e66524e68f7a33bd6fd11b6e805a280e45e3b0b
-praeco/praeco-1.0.1.tar.gz:
-  size: 101421691
-  sha: 258500159fe2163c0367168ba1dfb21555ba66d6
-python2.7/Python-2.7.15.tgz:
-  size: 17496336
-  object_id: 0a96a1a1-0ba5-4d78-7d86-b9106e787980
-  sha: c9750707d127d39a6868e1e55f7cd8c7be006b89
+elastalert-server/elastalert-server-20241227.tar.gz:
+  size: 14082249
+  object_id: bb624d34-7f36-450e-446a-77b3de3a8915
+  sha: sha256:05699762bbfc91f2940351c8856ab2eee3375528c37590545854585f8272d79f
+node/node-v20.18.1.tar.xz:
+  size: 25792116
+  object_id: 6bd2c0f3-6538-4c86-6762-11bba1ca4b49
+  sha: sha256:c6fa75c841cbffac851678a472f2a5bd612fff8308ef39236190e1f8dbb0e567
+praeco/praeco-1.8.20.tar.gz:
+  size: 9515954
+  object_id: 588e890f-53bf-4a24-601b-cdc99fe11894
+  sha: sha256:bc5464c77dd120664633859b7c4dc78c07a1b96c21051b95a1bb7118cd92740e
