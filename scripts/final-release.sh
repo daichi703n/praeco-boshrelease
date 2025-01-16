@@ -1,4 +1,4 @@
-VERSION=0.3.0
+VERSION=1.0.0
 RELEASE_DIR=$(pwd)/bosh-releases
 TARBALL=praeco-boshrelease-${VERSION}.tgz
 bosh create-release --name=praeco --force --version=${VERSION} --final --tarball=${RELEASE_DIR}/${TARBALL}
