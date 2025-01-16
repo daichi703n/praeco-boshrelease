@@ -4,4 +4,4 @@ name: node
 dependencies: []
 
 files:
-- node/node-v10.15.3.tar.xz
+- node/**/*

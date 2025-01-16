@@ -1,0 +1,15 @@
+- type: replace
+  path: /instance_groups/name=praeco/jobs/name=elastalert-server/properties?/elastalert?/es_username?
+  value: ((elasticsearch_username))
+
+- type: replace
+  path: /instance_groups/name=praeco/jobs/name=elastalert-server/properties?/elastalert?/es_password?
+  value: ((elasticsearch_password))
+
+- type: replace
+  path: /instance_groups/name=praeco/jobs/name=elastalert-server/properties?/elastalert?/use_ssl?
+  value: ((use_ssl))
+
+- type: replace
+  path: /instance_groups/name=praeco/jobs/name=elastalert-server/properties?/elastalert?/verify_certs?
+  value: ((verify_certs))

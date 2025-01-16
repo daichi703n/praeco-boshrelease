@@ -1,9 +1,0 @@
----
-name: elastalert
-
-templates: {}
-
-packages:
-- elastalert
-
-properties: {}

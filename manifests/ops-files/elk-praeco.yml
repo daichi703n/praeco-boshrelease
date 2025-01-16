@@ -18,44 +18,28 @@
       release: elastalert
       properties:
         elastalert:
-          writeback_index: elastalert_status
-          smtp_user: ((smtp_user))
-          smtp_password: ((smtp_password))
-          rules:
-          - name: dummy
-            type: frequency
-            index: logstash-*
-            num_events: 3
-            timeframe:
-              minutes: 10
-            filter:
-            - query:
-                query_string:
-                  query: "log:(ERROR)"
-            alert:
-            - slack
-            slack_webhook_url: ((slack_webhook_url))
+          es_host: ((es_host))
+          es_port: ((es_port))
+          rules: []
+    - name: nginx
+      release: nginx
+      properties:
+        nginx_conf: "events { worker_connections 1024; }"
     - name: elastalert-server
       release: praeco
       properties:
         elastalert:
-          writeback_index: elastalert_status
+          es_host: ((es_host))
+          es_port: ((es_port))
+          writeback_index: praeco_elastalert_status
     - name: praeco
       release: praeco
       properties:
-        elastalert:
-          writeback_index: elastalert_status
         praeco:
-          slack_webhook_url: ((slack_webhook_url))
           external_url: ((praeco_external_url))
-          smtp_host: ((smtp_host))
-          smtp_port: ((smtp_port))
-          config_options:
-            from_addr: ((elastalert_from_addr))
-            smtp_ssl: true
-            #use_ssl: true
+          slack_webhook_url: ((slack_webhook_url))
     instances: 1
-    stemcell: xenial
+    stemcell: jammy
     update:
       max_in_flight: 1
       serial: true

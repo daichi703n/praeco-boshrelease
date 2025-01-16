@@ -24,9 +24,10 @@ end
     "path": "/var/vcap/store/praeco/rule_templates"
   },
   "es_host": "<%= elasticsearch_host %>",
-  "es_port": <%= p("elastalert.es_port") %>,
-  "es_username": "",
-  "es_password": "",
-  "es_ssl": false,
+  "es_port": "<%= p("elastalert.es_port") %>",
+  "es_username": "<%= p("elastalert.es_username") %>",
+  "es_password": "<%= p("elastalert.es_password") %>",
+  "es_ssl": "<%= p("elastalert.use_ssl") %>",
+  "ea_verify_certs": "<%= p("elastalert.verify_certs") %>",
   "writeback_index": "<%= p("elastalert.writeback_index") %>"
 }

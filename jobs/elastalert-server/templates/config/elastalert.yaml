@@ -13,6 +13,17 @@ rules_folder: /var/vcap/store/praeco/rules
 <%= YAML.dump(JSON.load(JSON.dump({"buffer_time": p("elastalert.buffer_time")}))).gsub("---\n", '').strip %>
 es_host: <%= elasticsearch_host %>
 es_port: <%= p("elastalert.es_port") %>
+es_username: <%= p("elastalert.es_username") %>
+es_password: <%= p("elastalert.es_password") %>
+use_ssl: <%= p("elastalert.use_ssl") %>
+verify_certs: <%= p("elastalert.verify_certs") %>
 writeback_index: <%= p("elastalert.writeback_index") %>
 <%= YAML.dump(JSON.load(JSON.dump({"alert_time_limit": p("elastalert.alert_time_limit")}))).gsub("---\n", '').strip %>
+smtp_host: <%= p('elastalert.smtp_host') %>
+smtp_port: <%= p('elastalert.smtp_port') %>
+smtp_ssl: <%= p('elastalert.smtp_ssl') %>
 smtp_auth_file: /var/vcap/jobs/elastalert/config/smtp_auth_file.yml
+from_addr: <%= p('elastalert.from_addr') %>
+<% if_p('elastalert.config_options') do |config_options| %>
+<%= config_options.to_yaml.gsub(/---/, '') %>
+<% end %>
