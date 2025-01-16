@@ -2,15 +2,17 @@
 name: praeco
 releases:
 - name: praeco
-    version: ((praeco_version))
-    url: https://github.com/daichi703n/praeco-boshrelease/releases/download/((praeco_version))/praeco-boshrelease-((praeco_version)).tgz
-    sha1: ((praeco_sha1))
+  version: ((praeco_version))
+  url: https://github.com/daichi703n/praeco-boshrelease/releases/download/((praeco_version))/praeco-boshrelease-((praeco_version)).tgz
+  sha1: ((praeco_sha1))
 - name: elastalert
+  version: latest
+- name: nginx
   version: latest
 
 stemcells:
-- os: ubuntu-xenial
-  alias: xenial
+- os: ubuntu-jammy
+  alias: jammy
   version: latest
 
 instance_groups:
@@ -23,6 +25,10 @@ instance_groups:
         es_host: ((es_host))
         es_port: ((es_port))
         rules: []
+  - name: nginx
+    release: nginx
+    properties:
+      nginx_conf: "events { worker_connections 1024; }"
   - name: elastalert-server
     release: praeco
     properties:
@@ -33,12 +39,11 @@ instance_groups:
   - name: praeco
     release: praeco
     properties:
-      elastalert:
-        es_host: ((es_host))
-        es_port: ((es_port))
-        writeback_index: praeco_elastalert_status
+      praeco:
+        external_url: ((praeco_external_url))
+        slack_webhook_url: ((slack_webhook_url))
   instances: 1
-  stemcell: xenial
+  stemcell: jammy
   update:
     max_in_flight: 1
     serial: true

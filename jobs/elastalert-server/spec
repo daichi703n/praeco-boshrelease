@@ -8,6 +8,10 @@ templates:
   config/config.json.erb: config/config.json
   config/elastalert.yaml: config/config.yaml
 
+provides:
+- name: elastalert-server
+  type: elastalert-server
+
 consumes:
 - name: elasticsearch
   type: elasticsearch
@@ -16,6 +20,7 @@ consumes:
 packages:
 - elastalert-server
 - node
+# - elastalert
 
 properties:
   #---Copy from ElastAlert BOSH Release---#
@@ -36,6 +41,18 @@ properties:
   elastalert.es_port:
     description: " the port corresponding to es_host."
     default: "9200"
+  elastalert.es_username:
+    description: "basic-auth username for connecting to es_host."
+    default: ""
+  elastalert.es_password:
+    description: "basic-auth password for connecting to es_host."
+    default: ""
+  elastalert.use_ssl:
+    description: "Whether or not to connect to es_host using TLS."
+    default: "false"
+  elastalert.verify_certs:
+    description: "Whether or not to verify TLS certificates."
+    default: "true"
   elastalert.writeback_index:
     description: "the name of the index in which ElastAlert will store data."
     default: "elastalert_status"
@@ -43,6 +60,18 @@ properties:
     description: "the retry window for failed alerts."
     default:
       days: 2
+  elastalert.smtp_host:
+    description: "The SMTP host to use."
+    default: "localhost"
+  elastalert.smtp_port:
+    description: "The port to use."
+    default: 25
+  elastalert.smtp_ssl:
+    description: "Connect the SMTP host using TLS. If smtp_ssl is not used, ElastAlert will still attempt STARTTLS."
+    default: "false"
+  elastalert.from_addr:
+    description: "This sets the From header in the email. By default, the from address is ElastAlert@ and the domain will be set by the smtp server."
+    default: "ElastAlert@localhost"
   elastalert.rules:
     description: "List of ElastAlert rules"
     example: |

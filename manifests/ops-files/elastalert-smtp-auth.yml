@@ -1,0 +1,7 @@
+- type: replace
+  path: /instance_groups/name=praeco/jobs/name=elastalert-server/properties?/elastalert?/smtp_user?
+  value: ((smtp_user))
+
+- type: replace
+  path: /instance_groups/name=praeco/jobs/name=elastalert-server/properties?/elastalert?/smtp_password?
+  value: ((smtp_password))

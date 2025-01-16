@@ -1,5 +1,0 @@
-set -e
-
-ELASTALERT_VERSION=0.1.39
-
-tar xzf elastalert/elastalert-v${ELASTALERT_VERSION}.tar.gz  -C $BOSH_INSTALL_TARGET --strip-components 1

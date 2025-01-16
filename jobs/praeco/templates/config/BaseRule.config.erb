@@ -1,6 +1,4 @@
 slack_webhook_url: "<%= p('praeco.slack_webhook_url') -%>"
-smtp_host: "<%= p('praeco.smtp_host') -%>"
-smtp_port: "<%= p('praeco.smtp_port') -%>"
 slack_emoji_override: ':postal_horn:'
 <% if_p('praeco.config_options') do |config_options| %>
 <%= config_options.to_yaml.gsub(/---/, '') %>

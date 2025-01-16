@@ -10,11 +10,9 @@ PIDFILE=$RUN_DIR/elastalert-server.pid
 RUNAS=vcap
 
 export NODE_PATH=/var/vcap/packages/node
-# export PYTHONPATH=/var/vcap/packages/python2.7
-export PYTHONPATH=/var/vcap/packages/elastalert/lib/python2.7/site-packages/
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/vcap/packages/python2.7/lib
-# export PATH=$PATH:$NODE_PATH/bin:$PYTHONPATH/bin
-export PATH=$PATH:$NODE_PATH/bin:/var/vcap/packages/python2.7/bin
+export PYTHONPATH=/var/vcap/packages/elastalert/lib/python3.12/site-packages/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/vcap/packages/python3.12/lib
+export PATH=$NODE_PATH/bin:/var/vcap/packages/python3.12/bin:$PATH
 
 source $JOB_DIR/bin/ctl_utils.sh
 
@@ -22,7 +20,6 @@ case $1 in
 
   start)
     mkdir -p $RUN_DIR $LOG_DIR $STORE_DIR $TMP_DIR
-    #chown -R $RUNAS:$RUNAS $RUN_DIR $LOG_DIR $STORE_DIR $TMP_DIR ${JOB_DIR}/config
 
     pid_guard $PIDFILE elastalert-server
 
@@ -31,16 +28,17 @@ case $1 in
     echo "Starting elastalert-server..." >>$LOG_DIR/elastalert-server.stdout.log
     echo $$ > $PIDFILE
 
-    # exec chpst -u $RUNAS:$RUNAS \
     NODE_PATH=.
     BABEL_DISABLE_CACHE=1
+    # exec chpst -u $RUNAS:$RUNAS \
     exec node index.js \
         >>$LOG_DIR/elastalert-server.stdout.log \
         2>>$LOG_DIR/elastalert-server.stderr.log
     ;;
 
   stop)
-    kill_and_wait $PIDFILE
+    pkill -SIGINT --pidfile $PIDFILE
+    # kill_and_wait $PIDFILE
     ;;
 
   *)
